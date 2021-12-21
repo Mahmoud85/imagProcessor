@@ -1,6 +1,5 @@
 import fs from 'fs';
 import sharp from 'sharp';
-import express from 'express';
 
 const getimagePath = (
   filename?: string,
@@ -10,9 +9,8 @@ const getimagePath = (
 ): string => {
   if (cached) {
     return `../assets/cached/${filename}-${height}-${width}.jpg`;
-  } else {
-    return `../assets/full/${filename}.jpg`;
   }
+  return `../assets/full/${filename}.jpg`;
 };
 
 // check if image is here
@@ -36,9 +34,8 @@ const isImageExists = async (
     }
     if (fullImage) {
       return { exists: true, cached: false };
-    } else {
-      return { exists: false, cached: false };
     }
+    return { exists: false, cached: false };
   } catch (e) {
     return { exists: false, cached: false };
   }
@@ -54,13 +51,16 @@ const createCache = async (filename: string, height: string, width: string): Pro
     .toFile(dstFilePath);
 };
 
-const getResizedImage = async (filename:string,height:string,width:string) => {
+const getResizedImage = async (filename: string, height: string, width: string) => {
   const imageCheck = await isImageExists(filename as string, height as string, width as string);
   const path = require('path');
   if (!imageCheck.cached) {
     await createCache(filename as string, height as string, width as string);
   }
-  const dstFilePath = path.resolve(__dirname, getimagePath(filename as string, height as string, width as string, true));
+  const dstFilePath = path.resolve(
+    __dirname,
+    getimagePath(filename as string, height as string, width as string, true)
+  );
   return dstFilePath;
 };
 
