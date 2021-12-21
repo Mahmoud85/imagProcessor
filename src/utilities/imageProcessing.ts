@@ -45,6 +45,10 @@ const createCache = async (filename: string, height: string, width: string): Pro
   const path = require('path');
   const srcFilePath = path.resolve(__dirname, getimagePath(filename, height, width));
   const dstFilePath = path.resolve(__dirname, getimagePath(filename, height, width, true));
+  const cachedFolder = path.resolve(__dirname,'../assets/cached')
+  if (!fs.existsSync(cachedFolder)){
+    fs.mkdirSync(cachedFolder);
+  }
   await sharp(srcFilePath)
     .resize(Number(width), Number(height))
     .toFormat('jpeg')
