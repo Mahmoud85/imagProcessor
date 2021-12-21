@@ -1,5 +1,6 @@
 # Image processor
 This project is developed as an assignment for Udacity Nano degree program.
+* app end point `http://localhost:3000/api/images?filename=fjord&height=200&width=100`
 
 ## TL;DR
 
