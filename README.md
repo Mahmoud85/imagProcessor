@@ -1,0 +1,33 @@
+# Image processor
+This project is developed as an assignment for Udacity Nano degree program.
+
+## TL;DR
+
+To get started developing right away:
+
+* install all project dependencies with `npm i`
+* to build the app `npm run build`
+* to start development server `npm run start`
+* to test build app and run jasmine test `npm run test`
+* to run linting `npm run lint`
+* to run prettier `npm run prettier`
+
+
+# @ By:
+___  ___      _                               _  
+|  \/  |     | |                             | | 
+| .  . | __ _| |__  _ __ ___   ___  _   _  __| | 
+| |\/| |/ _` | '_ \| '_ ` _ \ / _ \| | | |/ _` | 
+| |  | | (_| | | | | | | | | | (_) | |_| | (_| | 
+\_|  |_/\__,_|_| |_|_| |_| |_|\___/ \__,_|\__,_| 
+                                                 
+                                                 
+   ______    _   _                               
+   |  ___|  | | | |                              
+   | |_ __ _| |_| |__  _   _                     
+   |  _/ _` | __| '_ \| | | |                    
+   | || (_| | |_| | | | |_| |                    
+   \_| \__,_|\__|_| |_|\__, |                    
+                        __/ |                    
+@ Email:
+## mahmoudfathy0@gmail.com
