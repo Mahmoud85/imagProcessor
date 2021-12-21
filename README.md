@@ -4,7 +4,7 @@ This project is developed as an assignment for Udacity Nano degree program.
 ## TL;DR
 
 To get started developing right away:
-
+* if you got in error running the porject you may need to install the ts-node globally , use the below command `npm install -g ts-node`
 * install all project dependencies with `npm i`
 * to build the app `npm run build`
 * to start development server `npm run start`
