@@ -1,1 +1,5 @@
 node_modules
+dist
+dist/tests/indexSpec.js
+dist/utilities/imageProcessing.js
+dist/utilities/validator.js
