@@ -1,7 +1,8 @@
 module.exports = {
   env: {
     es2021: true,
-    node: true
+    node: true,
+    jasmine: true
   },
   extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
   parser: '@typescript-eslint/parser',
@@ -12,9 +13,8 @@ module.exports = {
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
     'prettier/prettier': 2, // Means error
-    'no-console': 1, // Means warning
+    // 'no-console': 1, // Means warning
     'no-var': 'error',
-    'prefer-const': 'error',
-    'no-use-before-define': ['error', { functions: true, classes: true }]
+    'prefer-const': 'error'
   }
 };
