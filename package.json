@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint --fix src/**/*.ts",
+    "lint": "eslint src/**/*.ts --fix",
     "prettier": "prettier --config .prettierrc \"src/**/*.ts\" --write",
     "build": "npx tsc && npm run copy-files",
     "jasmine": "jasmine",
