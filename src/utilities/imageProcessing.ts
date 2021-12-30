@@ -1,5 +1,6 @@
 import fs from 'fs';
 import sharp from 'sharp';
+import * as path from 'path';
 
 const getimagePath = (
   filename?: string,
@@ -23,7 +24,6 @@ const isImageExists = async (
   height: string,
   width: string
 ): Promise<checkProps> => {
-  const path = require('path');
   try {
     const cachedurl = getimagePath(fileName, height, width, true);
     const fullurl = getimagePath(fileName);
@@ -42,7 +42,6 @@ const isImageExists = async (
 };
 
 const createCache = async (filename: string, height: string, width: string): Promise<void> => {
-  const path = require('path');
   const srcFilePath = path.resolve(__dirname, getimagePath(filename, height, width));
   const dstFilePath = path.resolve(__dirname, getimagePath(filename, height, width, true));
   const cachedFolder = path.resolve(__dirname, '../assets/cached');
@@ -57,7 +56,6 @@ const createCache = async (filename: string, height: string, width: string): Pro
 
 const getResizedImage = async (filename: string, height: string, width: string) => {
   const imageCheck = await isImageExists(filename as string, height as string, width as string);
-  const path = require('path');
   if (!imageCheck.cached) {
     await createCache(filename as string, height as string, width as string);
   }

@@ -1,8 +1,12 @@
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import _ from 'lodash';
 import { isImageExists } from '../utilities/imageProcessing';
 
-const validator = async (req: Request, res: Response, next: Function): Promise<Response | void> => {
+const validator = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<Response | void> => {
   let errorMsg = 'Error occured processing your image:';
   const fileName = req.query.filename as unknown as string;
   const height = req.query.height as unknown as string;

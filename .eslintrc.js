@@ -1,21 +1,20 @@
 module.exports = {
   env: {
-    browser: true,
-    jasmine: true,
     es2021: true,
     node: true
   },
-  extends: ['eslint:recommended'],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 2017,
+    ecmaVersion: 13,
     sourceType: 'module'
   },
-  plugins: ['prettier'],
+  plugins: ['@typescript-eslint', 'prettier'],
   rules: {
-    'prettier/prettier': 2,
-    'no-use-before-define': ['error', { functions: true, classes: true }],
+    'prettier/prettier': 2, // Means error
+    'no-console': 1, // Means warning
     'no-var': 'error',
-    'prefer-const': 'error'
+    'prefer-const': 'error',
+    'no-use-before-define': ['error', { functions: true, classes: true }]
   }
 };
